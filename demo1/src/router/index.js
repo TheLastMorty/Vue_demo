@@ -3,7 +3,7 @@ import HanHelloWorld from "../components/HanHelloWorld"
 import HelloWorld from "../components/HelloWorld"
 
 
-export default router =new VueRouter({
+export default new VueRouter({
     routes:[
         {
             path:"/Han",
@@ -12,6 +12,10 @@ export default router =new VueRouter({
         {
             path:"/Org",
             component:HelloWorld
+        },
+        {
+          path:"/",
+          component:HelloWorld
         }
     ]
 });

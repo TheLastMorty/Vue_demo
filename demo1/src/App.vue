@@ -3,9 +3,9 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <!-- <HanHelloWorld/> -->
-    <!-- <router-link class="routeLink" to="/Han"> han ni hao </router-link>
-    <router-link class="routeLink" to="/Org"> org ni hao </router-link> -->
-
+    <router-link class="routeLink" to="/Han"> han ni hao </router-link>
+    <router-link class="routeLink" to="/Org"> org ni hao </router-link>
+    <router-view></router-view>
   </div>
 </template>
 

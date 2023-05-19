@@ -1,8 +1,8 @@
 <template>
     <div>
-      <el-menu-item index="1">
+      <el-menu-item  @click=navigate :index=index>
         <i class="el-icon-setting"></i>
-        <span @click=navigate>{{NavigationName}}</span>
+        <span>{{NavigationName}}</span>
       </el-menu-item>
     </div>
 </template>
@@ -18,16 +18,16 @@ export default {
    },
    methods:{
       navigate(){
-        console.log("router push 被调用了",this.to)
+        // console.log("router push 被调用了",this.to)
           this.$router.push({
             name:this.to
           }      
         )
       }
    },
-   props:["NavigationName","to"]
+   props:["NavigationName","to","index"]
 }
 </script>
-<style lang="scss" scoped>
+<!-- <style lang="scss" scoped>
 
-</style>
+</style> -->

@@ -1,18 +1,8 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <!-- <HanHelloWorld/> -->
-    <!-- <el-button>默认按钮</el-button>
-    <router-link class="routeLink" to="/Han"> han ni hao </router-link>
-    <router-link class="routeLink" to="/Org"> org ni hao </router-link>
-    <router-view></router-view> -->
+
     <el-container style="height: 100vh; border: 1px solid #eee">
-      <el-aside width="200px" height:100vh style="background-color: rgb(238, 241, 246)">
-        <el-menu >
-          <NavigationItem NavigationName="hanHello" to="Han"></NavigationItem>
-        </el-menu>
-      </el-aside>
+      <AsideNavigation style="height:100vh"></AsideNavigation>
       <el-main>
         <router-view></router-view>
       </el-main>
@@ -21,15 +11,15 @@
 </template>
 
 <script>
-import NavigationItem from "./components/NavigationItem.vue";
+import AsideNavigation from './components/AsideNavigation.vue';
 
 export default {
   name: 'App',
   components: {
-    NavigationItem
+    AsideNavigation
   },
   methods:{
-
+    
   }
 }
 </script>

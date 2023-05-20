@@ -7,10 +7,14 @@
     <el-menu >
       <NavigationItem NavigationName="OrgHelloWorld" to="Org" index=2></NavigationItem>
     </el-menu>
+    <el-menu>
+      <SubNavigation></SubNavigation>
+    </el-menu>
   </el-aside>
 </template>
 <script>
 import NavigationItem from "./NavigationItem.vue";
+import SubNavigation from "./SubNavigation.vue";
 
 export default {
    data() {
@@ -24,7 +28,7 @@ export default {
    methods:{
    },
    components:{
-    NavigationItem
+    NavigationItem,SubNavigation
    }
 }
 </script>

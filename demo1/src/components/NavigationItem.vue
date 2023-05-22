@@ -20,7 +20,10 @@ export default {
       navigate(){
         // console.log("router push 被调用了",this.to)
           this.$router.push({
-            name:this.to
+            name:this.to,
+            query:{
+              name:this.NavigationName
+            }
           }      
         )
       }

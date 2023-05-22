@@ -5,8 +5,8 @@
         <span>车间选择</span>
       </template>
       <el-menu-item-group>
-        <NavigationItem v-for="(item,sub_index) in items" 
-          :index=sub_index :NavigationName=item.name :to=item.to :key=sub_index
+        <NavigationItem v-for="item in items " 
+           :NavigationName=item.name :to=item.to :key=item.index
         >
         </NavigationItem>
 
@@ -30,7 +30,7 @@ export default {
     components: { NavigationItem },
     beforeMount(){
       // 发送ajax请求获取items
-      this.items=[{name:"Han",to:"Han"},{name:"Org",to:"Org"}]
+      this.items=[{name:"Han",to:"Han",index:1},{name:"Org",to:"Org",index:2},{name:"车间1",to:"Variable",index:3}]
     }
 }
 </script>

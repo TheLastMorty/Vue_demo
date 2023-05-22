@@ -8,7 +8,7 @@
       <NavigationItem NavigationName="OrgHelloWorld" to="Org" index=2></NavigationItem>
     </el-menu>
     <el-menu>
-      <SubNavigation></SubNavigation>
+      <SubNavigation index=3></SubNavigation>
     </el-menu>
   </el-aside>
 </template>

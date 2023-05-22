@@ -1,6 +1,8 @@
 import VueRouter from "vue-router"
 import HanHelloWorld from "../components/HanHelloWorld"
 import HelloWorld from "../components/HelloWorld"
+import VariableManagement from "../components/VariableManagement"
+
 
 const originalPush = VueRouter.prototype.push
 
@@ -19,6 +21,12 @@ export default new VueRouter({
             path:"/Org",
             name:"Org",
             component:HelloWorld
+        },
+        {
+          path:"/Variable",
+          name:"Variable",
+          component:VariableManagement,
+          props: route => ({ name: route.query.name })
         }
 
     ]

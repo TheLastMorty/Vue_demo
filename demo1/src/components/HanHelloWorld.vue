@@ -13,7 +13,18 @@ export default {
             
         };
     },
+    beforeMount(){
+        // 为给定 ID 的 user 创建请求
+        // const url="http://127.0.0.1:8090/factory/getFactoryList"
+        // this.$axios.get(url)
+        // .then(function (response) {
+        //     console.log(response);
+        // })
+        // .catch(function (error) {
+        //     console.log(error);
+        // });
 
+    },
     mounted() {
         
     },

@@ -20,9 +20,9 @@ export default {
    methods:{
    },
    beforeMount(){
-    console.log("变量名"+this.name)
+    // console.log("变量名"+this.name)
 
-    console.log("变量名"+this.value)
+    // console.log("变量名"+this.value)
    }, 
    props:["name","value"]
 }
@@ -30,3 +30,4 @@ export default {
 <style lang="scss" scoped>
 
 </style>
+

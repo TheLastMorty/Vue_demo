@@ -2,7 +2,7 @@
     <el-submenu :index=index>
       <template slot="title">
         <i class="el-icon-location"></i>
-        <span>车间选择</span>
+        <span>{{this.name}}</span>
       </template>
       <el-menu-item-group>
         <NavigationItem v-for="item in items " 
@@ -26,7 +26,7 @@ export default {
     },
     computed: {},
     methods: {},
-    props: ["index"],
+    props: ["index","name"],
     components: { NavigationItem },
     beforeMount(){
       // 发送ajax请求获取items

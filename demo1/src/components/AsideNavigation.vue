@@ -8,13 +8,15 @@
       <NavigationItem NavigationName="OrgHelloWorld" to="Org" index=2></NavigationItem>
     </el-menu>
     <el-menu>
-      <SubNavigation index=3></SubNavigation>
+      <SubNavigation index=3 name="变量管理"></SubNavigation>
+      <FactoryNavigation index=4></FactoryNavigation>
     </el-menu>
   </el-aside>
 </template>
 <script>
 import NavigationItem from "./NavigationItem.vue";
 import SubNavigation from "./SubNavigation.vue";
+import FactoryNavigation from "./FactoryNavigation.vue";
 
 export default {
    data() {
@@ -28,7 +30,7 @@ export default {
    methods:{
    },
    components:{
-    NavigationItem,SubNavigation
+    NavigationItem,SubNavigation,FactoryNavigation
    }
 }
 </script>

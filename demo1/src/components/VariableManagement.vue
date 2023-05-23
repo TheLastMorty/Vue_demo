@@ -24,7 +24,7 @@ export default {
    components:{VariableCard},
    props:["name"],
    beforeMount(){
-    console.log(this.name)
+    // console.log(this.name)
     // 发送ajax请求获取对应变量域的所有变量值，并且启动一个定时器，动态地更新变量值
     this.variables=[{name:"风机1号",value:100,index:1},{name:"风机2号",value:200,index:2}]
    }

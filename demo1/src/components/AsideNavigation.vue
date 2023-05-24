@@ -9,14 +9,15 @@
     </el-menu>
     <el-menu>
       <SubNavigation index=3 name="变量管理"></SubNavigation>
-      <FactoryNavigation index=4></FactoryNavigation>
+      <!-- <FactoryNavigation index=4></FactoryNavigation> -->
+      <WorkShopNavigation index=4></WorkShopNavigation>
     </el-menu>
   </el-aside>
 </template>
 <script>
 import NavigationItem from "./NavigationItem.vue";
 import SubNavigation from "./SubNavigation.vue";
-import FactoryNavigation from "./FactoryNavigation.vue";
+import WorkShopNavigation from "./WorkShopNavigation.vue";
 
 export default {
    data() {
@@ -30,7 +31,7 @@ export default {
    methods:{
    },
    components:{
-    NavigationItem,SubNavigation,FactoryNavigation
+    NavigationItem,SubNavigation,WorkShopNavigation
    }
 }
 </script>

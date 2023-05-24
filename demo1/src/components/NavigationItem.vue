@@ -1,10 +1,10 @@
 <template>
-    <div>
-      <el-menu-item  @click=navigate :index=index>
-        <i class="el-icon-setting"></i>
-        <span>{{NavigationName}}</span>
-      </el-menu-item>
-    </div>
+  <div>
+    <el-menu-item  @click=navigate :index=index>
+      <i class="el-icon-setting"></i>
+      <span>{{NavigationName}}</span>
+    </el-menu-item>
+  </div>
 </template>
 <script>
 export default {

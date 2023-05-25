@@ -1,8 +1,8 @@
 <template>
     <div>
-      <el-descriptions :title="'变量名:  '+this.name">
-        <el-descriptions-item label="值">
-          {{ this.value }}
+      <el-descriptions :title="'变量名:  '+this.displayName">
+        <el-descriptions-item label="变量类型">
+          {{ this.dataType }}
         </el-descriptions-item>
       </el-descriptions>
     </div>
@@ -24,7 +24,7 @@ export default {
 
     // console.log("变量名"+this.value)
    }, 
-   props:["name","value"]
+   props:["variableName","displayName","dataType"]
 }
 </script>
 <style lang="scss" scoped>

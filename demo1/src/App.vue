@@ -4,7 +4,7 @@
     <el-container style="height: 100vh; border: 1px solid #eee">
       <AsideNavigation style="height:100vh"></AsideNavigation>
       <el-main>
-        <router-view></router-view>
+        <router-view :key="key"></router-view>
       </el-main>
     </el-container>
   </div>
@@ -17,6 +17,11 @@ export default {
   name: 'App',
   components: {
     AsideNavigation
+  },
+  computed:{
+    key() {
+        return this.$route.name !== undefined? this.$route.name + +new Date(): this.$route + +new Date()
+    }
   },
   methods:{
     

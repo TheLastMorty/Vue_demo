@@ -16,6 +16,14 @@ export default{
       method:"post",
       data
     })
+  },
+  getVariableByWorkShopId(data){
+    const url="variable/getVariableByWorkShopId"
+    return service({
+      url:url,
+      method:"post",
+      data
+    })
   }
 }
 

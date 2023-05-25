@@ -2,7 +2,8 @@ import VueRouter from "vue-router"
 import HanHelloWorld from "../components/HanHelloWorld"
 import HelloWorld from "../components/HelloWorld"
 import VariableManagement from "../components/VariableManagement"
-import WorkShopManagement from "../components/WorkShopManagement"
+// import WorkShopManagement from "../components/WorkShopManagement"
+const WorkShopManagement = ()=>import("../components/WorkShopManagement") 
 
 const originalPush = VueRouter.prototype.push
 
@@ -33,7 +34,7 @@ export default new VueRouter({
           name:"WorkShop",
           component:WorkShopManagement,
           props:route =>({
-            workshopId:route.query.workshopId
+            workshopId:route.query.workShopId
           })
         }
 

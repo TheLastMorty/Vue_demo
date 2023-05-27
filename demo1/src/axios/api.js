@@ -24,6 +24,14 @@ export default{
       method:"post",
       data
     })
+  },
+  getVariableValueByVariableId(data){
+    const url="variableRecord/getVariableRecordById"
+    return service({
+      url:url,
+      method:"post",
+      data
+    })
   }
 }
 

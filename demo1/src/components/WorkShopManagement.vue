@@ -32,26 +32,12 @@ export default {
    props:["workshopId"],
    beforeMount(){
     // 发送ajax请求，获取当前车间下的所有内容（小卡片）
-    // console.log(this)
-
-    (this.$store.dispatch("getVariableList",this.workshopId))
-    this.variables=this.$store.getters.variableList
-
-    // const requestData={workShopId:this.workshopId}
-
-    // api.getVariableByWorkShopId(requestData).then((response)=>{
-    //   // console.log(response)
-    //   this.variables=response.data
-    // },(error)=>{
-    //   console.log(error)
-    // })
-      // dataType: "real"
-      // displayName: "电机温度"
-      // equipmentId: ""
-      // variableId: "Connectivity/GeKong/G1/t1"
-      // variableName: "t1"
-      // workShopId: 0
-      // workShopName: ""
+    this.$store.dispatch("getVariableList",this.workshopId).then((response)=>{
+      // this.variables=this.$store.getters.variableList
+      this.variables=response;
+    },(error)=>{
+      console.log(error)
+    })
    }
 }
 </script>

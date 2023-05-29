@@ -33,7 +33,7 @@ export default {
     this.updateInterval=setInterval(() => {
         api.getVariableValueByVariableId(requestData).then((response)=>{
           // console.log("updateInterval被调用了")
-          console.log(response.data);
+          // console.log(response.data);
           this.value=response.data[0].content;
           // console.log(response.data)
         },(error)=>{

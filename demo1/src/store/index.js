@@ -14,16 +14,9 @@ export default new Vuex.Store({
   // mutation里只能存放同步的操作
   mutations:{
     updateValueList(state,values){
-      // for([key,value] of values.entries){
-      //   state.valueList.set(key,value)
-      // }
       state.valueList=values
     },
     getVariableList(state,variables){
-      // for([key,value] of variables.entries){
-      // }
-      console.log("mutatinos中 getVariableList方法被调用了")
-
       state.variableList=variables
     },
     getRequireList(state,requires){
@@ -36,21 +29,45 @@ export default new Vuex.Store({
   // actions里可以存放异步任务
   // actions提交mutation，并不直接更改state
   actions:{
-    getVariableList(context,workShopId){
+     getVariableList(context,workShopId){
       const requireData={workShopId}
-      console.log("actions中 getVariableList方法被调用了")
-      api.getVariableByWorkShopId(requireData).then((response)=>{
+      return api.getVariableByWorkShopId(requireData).then((response)=>{
         context.commit("getVariableList",response.data)
-        return context.getters.variableList
+        return response.data
+      },(error)=>{
+        console.log(error)
+      })
+    },
+    getVariableThreshold(context,variables){
+      const variableIdList=new Array()
+      for(let variable of variables){
+        variableIdList.push(variable.variableId);
+      }
+      const requireData={variableIdList}
+      return api.getVariableThresholdList(requireData).then((response)=>{
+        context.commit("getThresholdList",response.data)
+        // return response.data
+      },(error)=>{
+        console.log(error)
+      })
+    },
+    getVariableRequire(context,variables){
+      const variableIdList=new Array()
+      for(let variable of variables){
+        variableIdList.push(variable.variableId);
+      }
+      const requireData={variableIdList}
+      return api.getVariableRequireList(requireData).then((response)=>{
+        context.commit("getRequireList",response.data)
+        // return 
       },(error)=>{
         console.log(error)
       })
     }
+
   },
   getters:{
     variableList:state => {
-      console.log("getters中 variableList方法被调用了")
-
       return state.variableList
     }
   }

@@ -49,8 +49,10 @@ export default {
       //   });
 
       // 使用封装好的axios api 发送ajax请求
-      const requestData={factoryId:2}
-      api.getWorkShopList(requestData).then((response)=>{
+      // const requestData={factoryId:"2"}
+      // const formdata=new FormData();
+      // formdata.append("factoryId",2)
+      api.getWorkShopList("2").then((response)=>{
         console.log(response.data)
         this.workShopItems=response.data
       },(error)=>{

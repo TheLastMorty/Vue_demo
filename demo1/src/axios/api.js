@@ -10,19 +10,17 @@ export default{
     })
   },
   getWorkShopList(data){
-    const url="workShop/getWorkShopList"
-    return service({
+    const url="workShop/getWorkShopList"+"/"+data
+    return service({  
       url:url,
-      method:"post",
-      data
+      method:"get"
     })
   },
   getVariableByWorkShopId(data){
-    const url="variable/getVariableByWorkShopId"
+    const url="variable/getVariableByWorkShopId"+"/"+data.workShopId
     return service({
       url:url,
-      method:"post",
-      data
+      method:"get",
     })
   },
   getVariableValueByVariableId(data){
@@ -31,6 +29,25 @@ export default{
       url:url,
       method:"post",
       data
+    })
+  },
+  getVariableRecordsByIdList(data){
+    const url="variableRecord/getVariableRecordsByIdList"
+
+    return service.post(url,
+      data
+    )
+  },
+  
+  getVariableRecordsByIdList2(data){
+    const url="variableRecord/getVariableRecordsByIdList"
+    return service({
+      url:url,
+      method:"post",
+      data:JSON.stringify(data),
+      headers:{
+        "Content-Type":"application/json;charset=UTF-8"
+      }
     })
   }
 }

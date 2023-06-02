@@ -6,8 +6,10 @@
         :displayName=variable.displayName
         :dataType=variable.dataType
         :variableId=variable.variableId
+        :vuexValue=values.get(variable.variableId)
         :key=variable.variableId
       />
+      <h2>{{ testdata.get("a") }}</h2>
     </div>
 </template>
 <script>
@@ -17,7 +19,10 @@ export default {
 
    data() {
       return {
-        variables:[]
+        variables:[],
+        values:[],
+        updateValueInterval:null,
+        testdata:new Map()
       }
    },
    components:{
@@ -31,13 +36,23 @@ export default {
    },
    props:["workshopId"],
    beforeMount(){
+    this.testdata.set("a","a")
     // 发送ajax请求，获取当前车间下的所有内容（小卡片）
     this.$store.dispatch("getVariableList",this.workshopId).then((response)=>{
       // this.variables=this.$store.getters.variableList
-      this.variables=response;
-    },(error)=>{
-      console.log(error)
+      this.variables=response
+      // console.log(this.$store.state.valueList)
+      this.values=this.$store.state.valueList
+      this.updateValueInterval=setInterval(() => {
+       this.$store.dispatch("getVariableRecordList",this.variables)
+      }, 5000);
+      },(error)=>{
+        console.log(error)
     })
+   
+   },
+   beforeDestroy(){
+    clearInterval(this.updateValueInterval)
    }
 }
 </script>

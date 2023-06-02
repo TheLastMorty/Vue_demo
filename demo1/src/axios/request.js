@@ -6,7 +6,7 @@ const service = axios.create({
   baseURL:"http://127.0.0.1:8090",
   timeout:5000,
 })
-service.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
+// service.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 
 service.interceptors.request.use(function (config) {
   // 在发送请求之前做些什么

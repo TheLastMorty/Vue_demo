@@ -82,7 +82,7 @@ export default new Vuex.Store({
       for(let variable of variables){
         variableIdList.push(variable.variableId);
       }
-      let requireData={IdList:variableIdList,Id:2}
+      let requireData={idList:variableIdList,id:2}
       console.log(requireData)
       api.getVariableRecordsByIdList(requireData).then((response)=>{
         context.commit("updateValueList",response.data)
